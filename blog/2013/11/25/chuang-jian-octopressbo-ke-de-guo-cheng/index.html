@@ -1,0 +1,345 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>创建octopress博客的过程 - ChenJing</title>
+  <meta name="author" content="Marlon">
+
+  
+  <meta name="description" content="今天心血来潮，想在github上做个博客出来，以后就在这上面写博客，感觉会比用新浪或网易等博客高级很多，而且又不需要购买域名，爽爆啦^_^
+不过在创建博客期间遇到了一些问题，创建过程不顺利，现在趁刚做好，写下步骤，免得以后又要花时间去研究。 1.安装Ruby 1.9.3-p374 2. &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://Jing5022.github.io/blog/2013/11/25/chuang-jian-octopressbo-ke-de-guo-cheng">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="ChenJing" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+  
+
+</head>
+
+<body   class="collapse-sidebar sidebar-footer" >
+  <header role="banner"><hgroup>
+  <h1><a href="/">ChenJing</a></h1>
+  
+    <h2>每次成长都是意识到自己的无知</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:Jing5022.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">主页</a></li>
+  <li><a href="/blog/archives">文章归档</a></li>
+  <li><a href="/categories">文章分类</a></li>
+  <li><a href="/about">关于</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">创建octopress博客的过程</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-11-25T00:19:34+08:00" pubdate data-updated="true">Nov 25<span>th</span>, 2013</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>今天心血来潮，想在github上做个博客出来，以后就在这上面写博客，感觉会比用新浪或网易等博客高级很多，而且又不需要购买域名，爽爆啦^_^
+不过在创建博客期间遇到了一些问题，创建过程不顺利，现在趁刚做好，写下步骤，免得以后又要花时间去研究。</p>
+
+<h4>1.安装Ruby 1.9.3-p374</h4>
+
+<h4>2.安装Octopress</h4>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git clone git://github.com/imathis/octopress.git myblog
+</span><span class='line'>cd myblog
+</span><span class='line'>gem install bundler
+</span><span class='line'>bundle install
+</span><span class='line'>rake install</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>3.创建Repository</h4>
+
+<p>该Repository的命名需要遵守这样的约定，username.github.com，所以我创建的代码仓库名为jing5022.github.com，在创建时不可勾选 Initialize this repository with a README 这个选项，否则部署会失败，其中原因待考证</p>
+
+<h4>4.部署</h4>
+
+<p>执行以下指令进行部署，期间要求输入url，看网上的教程，其格式有两种，而我在这里因为格式的问题导致后面发布不到github上去，最后这样写便可顺利发布：<a href="https://github.com/Jing5022/jing5022.github.com.git">https://github.com/Jing5022/jing5022.github.com.git</a></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake setup_github_pages</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>5.生成静态网页</h4>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake generate</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>6.发布到github</h4>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake deploy</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>7.创建source分支，管理文件</h4>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git add .
+</span><span class='line'>git commit -m "backup files in source"
+</span><span class='line'>git push origin source</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>8.创建博文</h4>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake new_post["title"]</span></code></pre></td></tr></table></div></figure>
+
+
+<p>该命令将会在<code>source/_posts</code>目录下生成一个名为<code>YYYY-MM-DD-post-title.markdown</code>的文件,根据markdown的语法编辑该文件，即是在书写文章了。写好博文后需要再次生成静态网页，可输入以下指令后在本地的4000端口进行预览，最后还要发布到github上。</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake preview</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>9.克隆远程代码继续管理博客</h4>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git clone https://github.com/Jing5022/jing5022.github.com.git
+</span><span class='line'>cd jing5022.github.com
+</span><span class='line'>git checkout source
+</span><span class='line'>git clone https://github.com/Jing5022/jing5022.github.com.git _deploy</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>10.更换主题</h4>
+
+<p><a href="https://github.com/imathis/octopress/wiki/Octopress-Sites">多种主题链接</a>
+如更换一个名为solarized的主题</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>cd myblog
+</span><span class='line'>git clone http://github.com/erikzaadi/solarized-octopress-theme .themes/solarized
+</span><span class='line'>rake install["solarized"]
+</span><span class='line'>rake generate</span></code></pre></td></tr></table></div></figure>
+
+
+<p>以下是我觉得不错的主题</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git clone https://github.com/lucaslew/whitespace.git .themes/whitespace
+</span><span class='line'>git clone git://github.com/tommy351/Octopress-Theme-Slash.git .themes/slash
+</span><span class='line'>git clone git://github.com/amelandri/darkstripes.git .themes/darkstripes</span></code></pre></td></tr></table></div></figure>
+
+
+<p>主题的背景及代码块的背景的色调可通过编辑sass/custom/_colors.scss文件来修改</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$sol : light; //博客背景色调
+</span><span class='line'>$solarized : dark; //代码块背景色调</span></code></pre></td></tr></table></div></figure>
+
+
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Marlon</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-11-25T00:19:34+08:00" pubdate data-updated="true">Nov 25<span>th</span>, 2013</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/octopress/'>octopress</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/11/25/zhi-wo-de-bo-ke/" title="Previous Post: 致我的博客">&laquo; 致我的博客</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2013/11/26/zhong-yu-ba-bo-ke-yi-dao-le-win7/" title="Next Post: 终于把博客移到了win7">终于把博客移到了win7 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/10/07/shua-ji-jing-li/">刷机经历</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/12/14/comments/">怎么评论文章</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/12/13/zhen-xi-yong-you/">珍惜拥有</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/11/29/push-to-github-without-password/">Github免密钥推送代码</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/11/27/c-slash-s-and-b-slash-s/">C/S模式与B/S模式</a>
+      </li>
+    
+  </ul>
+</section>
+
+Included file 'custom/asides/weibo.html' not found in _includes directory
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Marlon -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'jing5022';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://Jing5022.github.io/blog/2013/11/25/chuang-jian-octopressbo-ke-de-guo-cheng/';
+        var disqus_url = 'http://Jing5022.github.io/blog/2013/11/25/chuang-jian-octopressbo-ke-de-guo-cheng/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

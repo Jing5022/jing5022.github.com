@@ -1,0 +1,277 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>C/S模式与B/S模式 - ChenJing</title>
+  <meta name="author" content="Marlon">
+
+  
+  <meta name="description" content="1.C/S模式 C/S（Client/Server，客户机/服务器）方式的网络计算模式，其工作分别由服务器和客户机完成。服务器负责管理数据库的访问，为多个客户程序管理数据，并对数据库进行检索和排序，此外还要对客户机/服务器网络结构中的数据库安全层加锁，进行保护。客户机负责与用户的交互，收集用户信息 &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://Jing5022.github.io/blog/2013/11/27/c-slash-s-and-b-slash-s">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="ChenJing" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+  
+
+</head>
+
+<body   class="collapse-sidebar sidebar-footer" >
+  <header role="banner"><hgroup>
+  <h1><a href="/">ChenJing</a></h1>
+  
+    <h2>每次成长都是意识到自己的无知</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:Jing5022.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">主页</a></li>
+  <li><a href="/blog/archives">文章归档</a></li>
+  <li><a href="/categories">文章分类</a></li>
+  <li><a href="/about">关于</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">C/S模式与B/S模式</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-11-27T18:19:26+08:00" pubdate data-updated="true">Nov 27<span>th</span>, 2013</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><h4>1.C/S模式</h4>
+
+<p>C/S（Client/Server，客户机/服务器）方式的网络计算模式，其工作分别由服务器和客户机完成。服务器负责管理数据库的访问，为多个客户程序管理数据，并对数据库进行检索和排序，此外还要对客户机/服务器网络结构中的数据库安全层加锁，进行保护。客户机负责与用户的交互，收集用户信息，通过网络向服务器请求对诸多数据库、电子表格或文档等信息的处理工作。所以，在C/S模式中，资源是不对等的，是一种“胖客户机”，“瘦服务器”的结构。</p>
+
+<h4>2.B/S模式</h4>
+
+<p>B/S（Browser/Server，浏览器/服务器）方式的网络结构，在客户端统一采用如Netscape和IE一类的浏览器，通过Web浏览器的向服务器提出请求，由Web服务器对数据库进行操作，并将结果传回客户端。在B/S体系结构系统中，用户通过浏览器向分布在网络上的许多服务器发出请求，服务器对浏览器请求进行处理，将用户所需的信息返回到浏览器。B/S结构简化了客户机的工作，客户机只需配置少量的客户端软件即可。但服务器将担负更多的工作，对数据库的访问和应用程序的执行都将在服务器上完成。即当浏览器发出请求后，其数据请求、加工、返回结果以及动态网页生成等工作全部由Web服务器完成。</p>
+
+<h4>3.C/S模式与B/S模式的比较</h4>
+
+<ul>
+<li>开发和维护成本
+
+<ul>
+<li>C/S开发和维护成本较高，对不同客户端需要开发不同的程序，且应用程序的安装、修改和升级均需要在所有的客户机上进行</li>
+<li>B/S模式中，客户端只需有通用的浏览器，所有的维护与升级工作都是在服务器上执行，无须对客户机进行任何改变，因而大大降低了开发和维护的成本</li>
+</ul>
+</li>
+<li>客户端负载
+
+<ul>
+<li>C/S的客户端具有显示和处理数据的功能，负载重。随着应用系统的功能越来越复杂，客户端的应用程序也变得越来越庞大</li>
+<li>B/S模式的客户端把事务处理逻辑部分分给了服务器，客户端只需进行显示即可</li>
+</ul>
+</li>
+<li>可移植性
+-C/S模式移植困难，因为用不同开发工具开发的应用程序，一般情况下互不兼容，难以移植到其他平台上运行
+-B/S模式在客户端安装的是通用的浏览器，不存在移植性问题</li>
+<li>用户界面
+
+<ul>
+<li>C/S模式的用户界面是由客户端安装的软件决定的，因此用户界面各不相同</li>
+<li>B/S通过通用的浏览器访问应用程序，其浏览器的界面统一，使用时类似于浏览网页</li>
+</ul>
+</li>
+<li>安全性
+
+<ul>
+<li>C/S模式适用于专人使用的系统，可以通过严格的管理派发软件，适用于安全性要求较高的专用应用软件</li>
+<li>B/S适用于交互性要求较多，使用人数较多，安全性要求不是很高的应用环境</li>
+</ul>
+</li>
+</ul>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Marlon</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-11-27T18:19:26+08:00" pubdate data-updated="true">Nov 27<span>th</span>, 2013</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/technology/'>technology</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/11/27/my-ubuntu-configuration/" title="Previous Post: 我的Ubuntu系统配置（13.04版本）">&laquo; 我的Ubuntu系统配置（13.04版本）</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2013/11/29/push-to-github-without-password/" title="Next Post: Github免密钥推送代码">Github免密钥推送代码 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/10/07/shua-ji-jing-li/">刷机经历</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/12/14/comments/">怎么评论文章</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/12/13/zhen-xi-yong-you/">珍惜拥有</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/11/29/push-to-github-without-password/">Github免密钥推送代码</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/11/27/c-slash-s-and-b-slash-s/">C/S模式与B/S模式</a>
+      </li>
+    
+  </ul>
+</section>
+
+Included file 'custom/asides/weibo.html' not found in _includes directory
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Marlon -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'jing5022';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://Jing5022.github.io/blog/2013/11/27/c-slash-s-and-b-slash-s/';
+        var disqus_url = 'http://Jing5022.github.io/blog/2013/11/27/c-slash-s-and-b-slash-s/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

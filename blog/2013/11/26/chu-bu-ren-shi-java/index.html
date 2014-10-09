@@ -1,0 +1,312 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>初步认识Java - ChenJing</title>
+  <meta name="author" content="Marlon">
+
+  
+  <meta name="description" content="1.JVM Java Virtual Machine，Java虚拟机
+client适用于启用GUI界面的交互应用，启动快，运行慢，一般用于开发环境
+server适用于运行后台服务器程序，启动慢，运行快，一般用于生产环境 2.JDK Java Development Kit，Java开发工具包， &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://Jing5022.github.io/blog/2013/11/26/chu-bu-ren-shi-java">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="ChenJing" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+  
+
+</head>
+
+<body   class="collapse-sidebar sidebar-footer" >
+  <header role="banner"><hgroup>
+  <h1><a href="/">ChenJing</a></h1>
+  
+    <h2>每次成长都是意识到自己的无知</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:Jing5022.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">主页</a></li>
+  <li><a href="/blog/archives">文章归档</a></li>
+  <li><a href="/categories">文章分类</a></li>
+  <li><a href="/about">关于</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">初步认识Java</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-11-26T23:59:55+08:00" pubdate data-updated="true">Nov 26<span>th</span>, 2013</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><h4>1.JVM</h4>
+
+<ul>
+<li>Java Virtual Machine，Java虚拟机</li>
+<li>client适用于启用GUI界面的交互应用，启动快，运行慢，一般用于开发环境</li>
+<li>server适用于运行后台服务器程序，启动慢，运行快，一般用于生产环境</li>
+</ul>
+
+
+<h4>2.JDK</h4>
+
+<ul>
+<li>Java Development Kit，Java开发工具包，其中包含了各种类库和工具，还有一个JRE</li>
+</ul>
+
+
+<h4>3.JRE</h4>
+
+<ul>
+<li>Java Runtime Environment，Java运行环境，运行Java程序只要有这个JRE就足够了</li>
+<li>JRE中包含了Java运行所必须的类库等文件，还有虚拟机（jre/bin/client/jvm.dll）</li>
+<li>JDK中也有一个JRE，这个JRE中有两个虚拟机jre/bin/client/jvm.dll和jre/bin/server/jvm.dll</li>
+</ul>
+
+
+<h4>4.Java版本</h4>
+
+<ul>
+<li>ava SE：Java Standard Edition 曾称 J2SE，Java标准版或Java标准平台，提供标准的JDK。利用该平台可以开发Java桌面应用程序和低端服务器应用程序，也可以开发Java Applet程序</li>
+<li>Java EE：Java enterpsise Edtion 曾称J2EE，Java企业版或Java企业平台。利用该平台可以构建企业级的服务应用，Java EE平台包含了Java SE平台，并增加了附加类库，以便支持目录管理、交易管理和企业级消息处理等功能</li>
+<li>Java ME：Java Micro Edition 曾称J2ME，Java微型版或Java小型平台。该平台是一种很小的Java运行环境，用于嵌入式的消费产品中</li>
+</ul>
+
+
+<h4>5.下载</h4>
+
+<ul>
+<li><a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html">官网下载</a></li>
+<li>32位 windows 7下载windows x86这一项</li>
+<li>双击安装，期间选择JDK和JRE的安装位置</li>
+</ul>
+
+
+<h4>6.配置环境变量</h4>
+
+<ul>
+<li>Path：选择JDK目录下的bin（如：D:\Java\jdk7\bin）</li>
+<li>ClassPath：选择Java类库的rt.jar包，为了加载该包下所有的类，应该在其后加上&#8221;.;&ldquo;（如：D:\Java\jre7\lib\rt.jar;.;）</li>
+</ul>
+
+
+<h4>7.一个简单的Java应用程序</h4>
+
+<ul>
+<li>创建文件HelloWorld.java</li>
+<li>使用记事本编辑器输入如下代码</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>public class HelloWorld {  
+</span><span class='line'>    public static void main(String[] args) {  
+</span><span class='line'>        System.out.println("Hello World!!!");  
+</span><span class='line'>    }  
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>打开命令提示符，切换到HelloWorld.java文件所在目录</li>
+<li>输入javac HelloWorld.java 进行编译</li>
+<li>再输入 java HelloWorld 运行</li>
+</ul>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Marlon</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-11-26T23:59:55+08:00" pubdate data-updated="true">Nov 26<span>th</span>, 2013</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/technology/'>technology</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/11/26/zhong-yu-ba-bo-ke-yi-dao-le-win7/" title="Previous Post: 终于把博客移到了win7">&laquo; 终于把博客移到了win7</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2013/11/27/jian-dan-de-ji-suan-qi/" title="Next Post: 简单的计算器">简单的计算器 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/10/07/shua-ji-jing-li/">刷机经历</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/12/14/comments/">怎么评论文章</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/12/13/zhen-xi-yong-you/">珍惜拥有</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/11/29/push-to-github-without-password/">Github免密钥推送代码</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/11/27/c-slash-s-and-b-slash-s/">C/S模式与B/S模式</a>
+      </li>
+    
+  </ul>
+</section>
+
+Included file 'custom/asides/weibo.html' not found in _includes directory
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Marlon -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'jing5022';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://Jing5022.github.io/blog/2013/11/26/chu-bu-ren-shi-java/';
+        var disqus_url = 'http://Jing5022.github.io/blog/2013/11/26/chu-bu-ren-shi-java/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

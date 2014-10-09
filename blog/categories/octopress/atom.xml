@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: octopress | ChenJing]]></title>
+  <link href="http://Jing5022.github.io/blog/categories/octopress/atom.xml" rel="self"/>
+  <link href="http://Jing5022.github.io/"/>
+  <updated>2014-10-09T15:54:01+08:00</updated>
+  <id>http://Jing5022.github.io/</id>
+  <author>
+    <name><![CDATA[Marlon]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Github免密钥推送代码]]></title>
+    <link href="http://Jing5022.github.io/blog/2013/11/29/push-to-github-without-password/"/>
+    <updated>2013-11-29T23:05:40+08:00</updated>
+    <id>http://Jing5022.github.io/blog/2013/11/29/push-to-github-without-password</id>
+    <content type="html"><![CDATA[<p>每次向Github提交代码时都要输入Github账号和密码，这是件挺麻烦的事。先在Ubuntu下完成免输入账号及密码就能向Github推送代码的设置，之后再到Windows下也做相应的设置。</p>
+
+<h4>1.修改Git的config文件</h4>
+
+<ul>
+<li>打开～/.git/config 文件
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>[core]
+</span><span class='line'>  repositoryformatversion = 0
+</span><span class='line'>  filemode = true
+</span><span class='line'>  bare = false
+</span><span class='line'>  logallrefupdates = true
+</span><span class='line'>[branch &ldquo;source&rdquo;]
+</span><span class='line'>  remote = origin
+</span><span class='line'>  merge = refs/heads/master
+</span><span class='line'>[remote &ldquo;origin&rdquo;]
+</span><span class='line'>  url = git@github.com:username/username.github.com.git
+</span><span class='line'>  fetch = +refs/heads/&lt;em>:refs/remotes/origin/&lt;/em></span></code></pre></td></tr></table></div></figure></notextile></div></li>
+<li>修改url中地username为相应的github账号名，不要用https协议</li>
+</ul>
+
+
+<h4>2.检查本机是否已存在ssh keys</h4>
+
+<p>输入以下指令查看~/.ssh文件夹下是否存在名为id_ras.pub或id_dsa.pub的文件，如果不存在则继续第三步，否则跳过第三步直接到第四步
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>cd ~/.ssh
+</span><span class='line'>ls</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<h4>3.创建新的ssh keys</h4>
+
+<p>执行以下指令，在<code>～/.ssh/id_rsa</code>文件中生成密钥
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ ssh-keygen -t rsa -C &ldquo;&lt;a href="&#x6d;&#x61;&#x69;&#x6c;&#x74;&#111;&#58;&#x79;&#111;&#117;&#114;&#95;&#x65;&#109;&#x61;&#x69;&#x6c;&#x40;&#x65;&#120;&#97;&#x6d;&#112;&#108;&#x65;&#46;&#99;&#111;&#x6d;">&#x79;&#111;&#117;&#114;&#95;&#x65;&#x6d;&#97;&#x69;&#x6c;&#64;&#x65;&#x78;&#x61;&#x6d;&#x70;&#108;&#101;&#x2e;&#99;&#x6f;&#x6d;&lt;/a>&rdquo; #这里需要输入邮箱
+</span><span class='line'>Generating public/private rsa key pair.
+</span><span class='line'>Enter file in which to save the key (/home/marlon/.ssh/id_rsa): #这里按Enter直接通过
+</span><span class='line'>Enter passphrase (empty for no passphrase): #输入Github密码
+</span><span class='line'>Enter same passphrase again: #再次输入密码
+</span><span class='line'>Your identification has been saved in /home/marlon/.ssh/id_rsa.
+</span><span class='line'>Your public key has been saved in /home/marlon/.ssh/id_rsa.pub.
+</span><span class='line'>The key fingerprint is:
+</span><span class='line'>12:80:8a:a7:cf:42:a9:f2:c6:67:8c:6c:9c:cc:4b:5c &lt;a href="&#109;&#97;&#x69;&#x6c;&#x74;&#111;&#x3a;&#121;&#x6f;&#117;&#114;&#95;&#101;&#109;&#x61;&#x69;&#108;&#x40;&#101;&#x78;&#97;&#109;&#112;&#x6c;&#x65;&#46;&#99;&#111;&#109;">&#x79;&#111;&#x75;&#114;&#x5f;&#101;&#x6d;&#x61;&#x69;&#x6c;&#x40;&#x65;&#120;&#x61;&#x6d;&#112;&#108;&#101;&#x2e;&#x63;&#x6f;&#109;&lt;/a>
+</span><span class='line'>The key&rsquo;s randomart image is:
+</span><span class='line'>  &hellip;&hellip;</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<h4>4.添加密钥到Github账号上</h4>
+
+<ul>
+<li>复制<code>～/.ssh/id_rsa</code>文件的内容</li>
+<li>打开Github选择<code>Acount settings</code>再选择<code>SSH Keys</code></li>
+<li>随便给Title取名，将复制地信息张贴到Key中</li>
+<li>点击<code>Add key</code>并输入Github密码完成添加</li>
+</ul>
+
+
+<h4>5.测试</h4>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>ssh -T &lt;a href="&#109;&#x61;&#105;&#x6c;&#116;&#111;&#x3a;&#x67;&#x69;&#x74;&#x40;&#103;&#x69;&#116;&#104;&#117;&#98;&#x2e;&#99;&#x6f;&#109;">&#103;&#105;&#x74;&#64;&#103;&#x69;&#x74;&#104;&#117;&#x62;&#46;&#x63;&#x6f;&#x6d;&lt;/a></span></code></pre></td></tr></table></div></figure></notextile></div>
+如果出现以下信息则说明设置成功
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Hi username! You&rsquo;ve successfully authenticated, but GitHub does not provide shell access.</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<h4>6.克隆项目</h4>
+
+<p>这里不要用https协议，所以克隆时使用下面第一条指令
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git clone git@github.com:username/username.github.com.git myblog
+</span><span class='line'>git clone &lt;a href="https://github.com/username/username.github.com.git">https://github.com/username/username.github.com.git&lt;/a> myblog</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[终于把博客移到了win7]]></title>
+    <link href="http://Jing5022.github.io/blog/2013/11/26/zhong-yu-ba-bo-ke-yi-dao-le-win7/"/>
+    <updated>2013-11-26T15:31:55+08:00</updated>
+    <id>http://Jing5022.github.io/blog/2013/11/26/zhong-yu-ba-bo-ke-yi-dao-le-win7</id>
+    <content type="html"><![CDATA[<p>在Ubuntu中创建Octopress博客一切顺利，但以后总有需要在Windows下写博客的时候，所以必须在Windows下配置好写博客的环境。在这里可费了我不少的时间啊，问题其实只有一个，在Windows下创建的文本文件是ANSI格式，而Octopress博客只能识别utf-8无BOM格式的文本文件。一开始我不知道是这个原因，又被网上几篇文章给误导了，先是跑去将文本转换成utf-8格式，结果还是出错，后来去虚拟机装Ubuntu系统，但在虚拟机中配置环境时又出现了很多奇葩的问题，其中有几个一直都解决不了，最后尝试在Windows下对博客进行所有的操作，但生成的markdown格式的博客文本文件删掉，使用在Ubuntu中创建的文件，结果成功了。因此，我便确定问题仅仅是文件编码格式不同而已，问题变简单了，找一个文件格式转换软件，只要写好博文后将文件转换为utf-8无BOM格式，便可以了。</p>
+
+<p>坑爹的，先把在Windows下配置的步骤记下来，再把所用到的软件安装包（<a href="http://pan.baidu.com/s/16AHOW">点击下载</a>）备份下，以后不用浪费时间。</p>
+
+<h4>1. 安装Git</h4>
+
+<p>安装包<code>Git-1.8.3-preview20130601.exe</code></p>
+
+<h4>2. 安装Ruby</h4>
+
+<p>安装包<code>rubyinstaller-1.9.3-p484.exe</code>，默认安装位置<code>C:\Ruby193</code>，配置环境变量<code>Path：C:\Ruby193\bin</code></p>
+
+<h4>3.安装Ruby Develop Kit</h4>
+
+<p>安装包<code>DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe</code>，实际只是一个解压过程，解压到<code>C:\RubyDEvKit\</code></p>
+
+<h4>4. 在命令提示符中运行以下指令</h4>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>cd C:\RubyDEvKit
+</span><span class='line'>ruby dk.rb init
+</span><span class='line'>ruby dk.rb install</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<h4>5. 克隆自己的Octopress项目</h4>
+
+<p>打开git bash，输入以下指令
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git clone -b source &lt;a href="https://github.com/Jing5022/jing5022.github.com.git">https://github.com/Jing5022/jing5022.github.com.git&lt;/a> myblog
+</span><span class='line'>cd myblog
+</span><span class='line'>git clone &lt;a href="https://github.com/Jing5022/jing5022.github.com.git">https://github.com/Jing5022/jing5022.github.com.git&lt;/a> _deploy</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<h4>6. 安装Octopress</h4>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>cd myblog
+</span><span class='line'>gem install bundler
+</span><span class='line'>bundle install</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<h4>7. 解决中文问题</h4>
+
+<p>Windows默认字符编码为gbk，Octopress只支持utf-8无BOM，输入以下指令解决该问题
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>set LC_ALL=zh_CN.UTF-8
+</span><span class='line'>set LANG=zh_CN.UTF-8</span></code></pre></td></tr></table></div></figure></notextile></div>
+找到并打开这个文件<code>C:\Ruby193\lib\ruby\gems\1.9.1\gems\jekyll-0.12.0\lib\jekyll\convertible.rb</code>，将下面第一句代码替换成第二行代码
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>self.content = File.read(file.join(base, name))
+</span><span class='line'>self.content = File.read(File.join(base, name), :encoding => &ldquo;utf-8&rdquo;)</span></code></pre></td></tr></table></div></figure></notextile></div>
+在Windows中html文件不能使用中文，否则<code>rake generate</code>出错，目前我还不知道是什么原因，在windows下的解决方法是在目录C:\Program Files (x86)\Git\etc下找到profile文件，在其最后添加一下两行代码
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>export LC_ALL=en_US.UTF-8
+</span><span class='line'>export LANG=en_US.UTF-8</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<h4>8. 测试部署是否成功</h4>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake generate
+</span><span class='line'>rake preview</span></code></pre></td></tr></table></div></figure></notextile></div>
+打开浏览器输入<code>localhost:4000</code>，感受自己的本地博客吧</p>
+
+<h4>9. 安装文本文件格式转换器</h4>
+
+<p>安装包<code>npp.6.5.1.Installer.exe</code>，安装后打开，在菜单栏上的选择格式再选择<code>转为UTF-8无BOM编码格式</code>。Notepad++是一种编辑器，功能很强大，这里我只用到它对文本文件格式的转换功能，将其格式转为 UTF-8无BOM 编码格式，而该编辑器的其他功能以后慢慢发现</p>
+
+<p>接下来便可以对博客的进行管理操作了，但在编写博文后需要用必须使用Notepad++对文件进行格式转换。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[创建octopress博客的过程]]></title>
+    <link href="http://Jing5022.github.io/blog/2013/11/25/chuang-jian-octopressbo-ke-de-guo-cheng/"/>
+    <updated>2013-11-25T00:19:34+08:00</updated>
+    <id>http://Jing5022.github.io/blog/2013/11/25/chuang-jian-octopressbo-ke-de-guo-cheng</id>
+    <content type="html"><![CDATA[<p>今天心血来潮，想在github上做个博客出来，以后就在这上面写博客，感觉会比用新浪或网易等博客高级很多，而且又不需要购买域名，爽爆啦^_^
+不过在创建博客期间遇到了一些问题，创建过程不顺利，现在趁刚做好，写下步骤，免得以后又要花时间去研究。</p>
+
+<h4>1.安装Ruby 1.9.3-p374</h4>
+
+<h4>2.安装Octopress</h4>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git clone git://github.com/imathis/octopress.git myblog
+</span><span class='line'>cd myblog
+</span><span class='line'>gem install bundler
+</span><span class='line'>bundle install
+</span><span class='line'>rake install</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<h4>3.创建Repository</h4>
+
+<p>该Repository的命名需要遵守这样的约定，username.github.com，所以我创建的代码仓库名为jing5022.github.com，在创建时不可勾选 Initialize this repository with a README 这个选项，否则部署会失败，其中原因待考证</p>
+
+<h4>4.部署</h4>
+
+<p>执行以下指令进行部署，期间要求输入url，看网上的教程，其格式有两种，而我在这里因为格式的问题导致后面发布不到github上去，最后这样写便可顺利发布：<a href="https://github.com/Jing5022/jing5022.github.com.git">https://github.com/Jing5022/jing5022.github.com.git</a>
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake setup_github_pages</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<h4>5.生成静态网页</h4>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake generate</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<h4>6.发布到github</h4>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake deploy</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<h4>7.创建source分支，管理文件</h4>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git add .
+</span><span class='line'>git commit -m &ldquo;backup files in source&rdquo;
+</span><span class='line'>git push origin source</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<h4>8.创建博文</h4>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake new_post[&ldquo;title&rdquo;]</span></code></pre></td></tr></table></div></figure></notextile></div>
+该命令将会在<code>source/_posts</code>目录下生成一个名为<code>YYYY-MM-DD-post-title.markdown</code>的文件,根据markdown的语法编辑该文件，即是在书写文章了。写好博文后需要再次生成静态网页，可输入以下指令后在本地的4000端口进行预览，最后还要发布到github上。
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake preview</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<h4>9.克隆远程代码继续管理博客</h4>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git clone &lt;a href="https://github.com/Jing5022/jing5022.github.com.git">https://github.com/Jing5022/jing5022.github.com.git&lt;/a>
+</span><span class='line'>cd jing5022.github.com
+</span><span class='line'>git checkout source
+</span><span class='line'>git clone &lt;a href="https://github.com/Jing5022/jing5022.github.com.git">https://github.com/Jing5022/jing5022.github.com.git&lt;/a> _deploy</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<h4>10.更换主题</h4>
+
+<p><a href="https://github.com/imathis/octopress/wiki/Octopress-Sites">多种主题链接</a>
+如更换一个名为solarized的主题
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>cd myblog
+</span><span class='line'>git clone &lt;a href="http://github.com/erikzaadi/solarized-octopress-theme">http://github.com/erikzaadi/solarized-octopress-theme&lt;/a> .themes/solarized
+</span><span class='line'>rake install[&ldquo;solarized&rdquo;]
+</span><span class='line'>rake generate</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>以下是我觉得不错的主题
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git clone &lt;a href="https://github.com/lucaslew/whitespace.git">https://github.com/lucaslew/whitespace.git&lt;/a> .themes/whitespace
+</span><span class='line'>git clone git://github.com/tommy351/Octopress-Theme-Slash.git .themes/slash
+</span><span class='line'>git clone git://github.com/amelandri/darkstripes.git .themes/darkstripes</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>主题的背景及代码块的背景的色调可通过编辑sass/custom/_colors.scss文件来修改
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$sol : light; //博客背景色调
+</span><span class='line'>$solarized : dark; //代码块背景色调</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+]]></content>
+  </entry>
+  
+</feed>

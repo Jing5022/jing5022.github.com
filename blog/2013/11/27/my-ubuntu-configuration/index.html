@@ -1,0 +1,447 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>我的Ubuntu系统配置（13.04版本） - ChenJing</title>
+  <meta name="author" content="Marlon">
+
+  
+  <meta name="description" content="1.更新源 1
+sudo apt-get update 2.安装软件 1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+sudo apt-get install guake
+sudo apt-get install gnome-do
+sudo apt-get &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://Jing5022.github.io/blog/2013/11/27/my-ubuntu-configuration">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="ChenJing" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+  
+
+</head>
+
+<body   class="collapse-sidebar sidebar-footer" >
+  <header role="banner"><hgroup>
+  <h1><a href="/">ChenJing</a></h1>
+  
+    <h2>每次成长都是意识到自己的无知</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:Jing5022.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">主页</a></li>
+  <li><a href="/blog/archives">文章归档</a></li>
+  <li><a href="/categories">文章分类</a></li>
+  <li><a href="/about">关于</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">我的Ubuntu系统配置（13.04版本）</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-11-27T16:49:34+08:00" pubdate data-updated="true">Nov 27<span>th</span>, 2013</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><h4>1.更新源</h4>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo apt-get update</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>2.安装软件</h4>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo apt-get install guake
+</span><span class='line'>sudo apt-get install gnome-do
+</span><span class='line'>sudo apt-get install openssh-client
+</span><span class='line'>sudo apt-get install openssh-server
+</span><span class='line'>sudo apt-get install git-core
+</span><span class='line'>sudo apt-get install tig
+</span><span class='line'>sudo apt-get install mysql-server
+</span><span class='line'>sudo apt-get install mysql-client
+</span><span class='line'>sudo apt-get install curl
+</span><span class='line'>// 安装rvm，装后vim ~/.bashrc，加入[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+</span><span class='line'>\curl -L https://get.rvm.io | bash -s stable
+</span><span class='line'>rvm install ruby 1.9.3
+</span><span class='line'>rvm install ruby 2.0.0
+</span><span class='line'>sudo apt-get install apache2
+</span><span class='line'>sudo apt-get install ack-grep
+</span><span class='line'>// 安装右键打开终端脚本，安装完执行killall nautilus
+</span><span class='line'>sudo apt-get install nautilus-open-terminal</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>3.Backspace按键失效</h4>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo gvim  ~/.config/nautilus/accels  
+</span><span class='line'>// 在文件最下方添加下面这行代码  
+</span><span class='line'>(gtk_accel_path "&lt;Actions>/ShellActions/Up" "BackSpace")
+</span><span class='line'> // 重启Nautilus
+</span><span class='line'>nautilus -q</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>4.Guake Terminal GUI 显示错误</h4>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo vim /usr/share/guake/guake.glade  
+</span><span class='line'>&lt;property name="gravity">north&lt;/property>
+</span><span class='line'>// 将static改为north</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>5.安装搜狗拼音输入法</h4>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo add-apt-repository ppa:fcitx-team/nightly  
+</span><span class='line'>sudo apt-get update  
+</span><span class='line'>sudo apt-get install fcitx-sogoupinyin  
+</span><span class='line'>im-switch -s fcitx -z default</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>6.设置关机快捷键</h4>
+
+<ul>
+<li>系统设置&mdash;键盘&mdash;快捷键&mdash;自定义快捷键&mdash;“+”</li>
+<li>在命令输入：<code>/usr/lib/indicator-session/gtk-logout-helper -s</code></li>
+</ul>
+
+
+<h4>7.自动挂载磁盘</h4>
+
+<ul>
+<li>查看本地磁盘信息: <code>ls -l /dev/disk/by-uuid</code></li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>lrwxrwxrwx 1 root root 10 May 24 14:14 2C10CFFB10CFCA52 -> ../../sda6
+</span><span class='line'>lrwxrwxrwx 1 root root 10 May 24 14:14 3A88EA3B88E9F573 -> ../../sda1
+</span><span class='line'>lrwxrwxrwx 1 root root 11 May 24 14:14 5326af25-5d9d-43f3-9db2-34c57053ddcb -> ../../sda10
+</span><span class='line'>lrwxrwxrwx 1 root root 10 May 24 14:14 7C70FFB270FF716E -> ../../sda7
+</span><span class='line'>lrwxrwxrwx 1 root root 10 May 24 14:14 a177ed6b-9d64-4b74-b610-23f51ce325b9 -> ../../sda9
+</span><span class='line'>lrwxrwxrwx 1 root root 10 May 24 14:14 D8E42E3BE42E1BEE -> ../../sda8
+</span><span class='line'>lrwxrwxrwx 1 root root 10 May 24 14:14 F6E499FDE499BFF3 -> ../../sda5</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>打开配置文件: <code>sudo gvim /etc/fstab</code></li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>UUID=5a0bd731-6b01-4cbc-b088-b0cb70ca463c /               ext4    errors=remount-ro 0       1
+</span><span class='line'>UUID=a177ed6b-9d64-4b74-b610-23f51ce325b9 none        swap      sw                           0       0</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>添加要挂载的磁盘，如本人配置添加以下信息</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>UUID=F6E499FDE499BFF3          /media/Softwares     ntfs    utf8,umask=007,gid=46       0         1
+</span><span class='line'>UUID=2C10CFFB10CFCA52        /media/Daily               ntfs    utf8,umask=007,gid=46       0         1
+</span><span class='line'>UUID=7C70FFB270FF716E          /media/Learning        ntfs    utf8,umask=007,gid=46       0         1
+</span><span class='line'>UUID=D8E42E3BE42E1BEE          /media/Others            ntfs    utf8,umask=007,gid=46       0         1</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>8.SSH无密码登录</h4>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>ssh-keygen  // 生成密钥，直接回车至结束  
+</span><span class='line'>ssh-copy-id user@id  // 复制SSH密钥到目标主机</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>9.设置右键管理员打开文件夹</h4>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo add-apt-repository ppa:noobslab/apps  
+</span><span class='line'>sudo apt-get update  
+</span><span class='line'>sudo apt-get install open-as-administrator  
+</span><span class='line'>nautilus -q</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>右击一个文件夹</li>
+<li>选择脚本(s)</li>
+<li>选择<code>open-as-administrator.sh</code></li>
+<li>输入密码便以管理员身份进入目录</li>
+</ul>
+
+
+<h4>10. 安装清道夫</h4>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo add-apt-repository ppa:tualatrix/ppa  
+</span><span class='line'>sudo apt-get update  
+</span><span class='line'>sudo apt-get install ubuntu-tweak</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>11.备份系统</h4>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo su
+</span><span class='line'>cd
+</span><span class='line'>tar cvpzf backup.tgz / --exclude=/proc --exclude=/lost+found --exclude=/backup.tgz --exclude=/mnt --exclude=/sys --exclude=/media</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>12.还原系统</h4>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo su
+</span><span class='line'>cd
+</span><span class='line'>tar xvpfz backup.tgz -C /</span></code></pre></td></tr></table></div></figure>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Marlon</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-11-27T16:49:34+08:00" pubdate data-updated="true">Nov 27<span>th</span>, 2013</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/technology/'>technology</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/11/27/pai-xu-suan-fa/" title="Previous Post: 排序算法">&laquo; 排序算法</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2013/11/27/c-slash-s-and-b-slash-s/" title="Next Post: C/S模式与B/S模式">C/S模式与B/S模式 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/10/07/shua-ji-jing-li/">刷机经历</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/12/14/comments/">怎么评论文章</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/12/13/zhen-xi-yong-you/">珍惜拥有</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/11/29/push-to-github-without-password/">Github免密钥推送代码</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/11/27/c-slash-s-and-b-slash-s/">C/S模式与B/S模式</a>
+      </li>
+    
+  </ul>
+</section>
+
+Included file 'custom/asides/weibo.html' not found in _includes directory
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Marlon -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'jing5022';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://Jing5022.github.io/blog/2013/11/27/my-ubuntu-configuration/';
+        var disqus_url = 'http://Jing5022.github.io/blog/2013/11/27/my-ubuntu-configuration/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
